@@ -15,3 +15,7 @@ we propose a Situated Conversation Agent Pre-trained with Multimodal Questions f
 ## 🔥 News
 
 - 2022.11.18: Our paper is accepted by AAAI 2023. 
+
+## 📝 **License**
+
+Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
