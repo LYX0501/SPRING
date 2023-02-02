@@ -15,7 +15,7 @@ we propose a Situated Conversation Agent Pre-trained with Multimodal Questions f
 ## 🔥 News
 - 2023.1.31: Code has been submitted to Security Department for check, which will be released in two weeks. You are welcome to star our project for latest update!
 - 2023.1.5: Our paper is announced as AAAI 2023 Oral.
-- 2022.11.18: Our paper is accepted by AAAI 2023. 
+- 2022.11.18: Our paper is accepted by AAAI 2023 Main Track. 
 
 ## 📝 **License**
 
