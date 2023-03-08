@@ -21,6 +21,16 @@ we propose a [Situated Conversation Agent Pre-trained with Multimodal Questions 
 - 2023.1.5: Our paper is announced as AAAI 2023 Oral.
 - 2022.11.18: Our paper is accepted by AAAI 2023 Main Track. 
 
+## 🌏 Requirements
+* python 3.6.12
+* pytorch 1.8.2
+* torchvision 0.9.2
+
+## 🔨 Installation
+```
+pip install -r requirements.txt
+```
+
 ## 📝 **License**
 
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
