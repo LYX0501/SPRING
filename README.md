@@ -25,6 +25,7 @@ we propose a [Situated Conversation Agent Pre-trained with Multimodal Questions 
 * python 3.6.12
 * pytorch 1.8.2
 * torchvision 0.9.2
+* nltk 3.6.7
 
 ## 🔨 Installation
 ```
