@@ -34,3 +34,24 @@ pip install -r requirements.txt
 ## 📝 **License**
 
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
+
+# Citation
+Please cite our paper if you find it helpful :)
+
+```
+@article{long2023spring,
+  author    = {Yuxing Long and
+               Binyuan Hui and
+               Fulong Ye and
+               Yanyang Li and
+               Zhuoxin Han and
+               Caixia Yuan and
+               Yongbin Li and
+               Xiaojie Wang},
+  title     = {{SPRING:} Situated Conversation Agent Pretrained with Multimodal Questions
+               from Incremental Layout Graph},
+  journal   = {CoRR},
+  volume    = {abs/2301.01949},
+  year      = {2023},
+}
+```
