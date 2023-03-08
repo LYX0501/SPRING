@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
 
-# ✒ **Citation** 
+## ✒ **Citation** 
 Please cite our paper if you find it helpful :)
 
 ```
