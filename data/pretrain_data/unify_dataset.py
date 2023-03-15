@@ -242,40 +242,6 @@ class UnifyDataset(OFADataset):
     def process_image_text_pair(self, index):
         
         uniq_id, image, caption, question, refs, difficulty, dataset_name, type = self.dataset[index] 
-        '''
-        # Curriculum Learning
-        if random.random() > 0.5:
-            while True:
-                uniq_id, image, caption, question, refs, difficulty, dataset_name, type = self.dataset[index]   
-                if self.epoch == 1 or self.epoch == 2:
-                    if len(question+' '+caption) > 60: continue 
-                    else: break
-                elif self.epoch == 3:
-                    if (len(question+' '+caption) > 80): continue
-                    else: break
-                elif self.epoch > 3: 
-                    #if len(question+' '+caption) < 60 and random.random() < 0.5: continue
-                    #else: break
-                    break
-        else:
-            uniq_id, image, caption, question, refs, difficulty, dataset_name, type = self.detection_dataset[index]
-        '''
-        if random.random() < 0.4:
-            while True:
-                uniq_id, image, caption, question, refs, gt_objects, dataset_name, type = self.dataset[index]   
-                if self.epoch == 1 or self.epoch == 2:
-                    if len(question+' '+caption) > 60: continue 
-                    else: break
-                elif self.epoch == 3:
-                    if (len(question+' '+caption) > 80): continue
-                    else: break
-                elif self.epoch > 3: 
-                    #if len(question+' '+caption) < 60 and random.random() < 0.5: continue
-                    #else: break
-                    break
-        else:
-            uniq_id, image, caption, question, refs, gt_objects, dataset_name, type = self.detection_dataset[index]
-
 
         image = Image.open(BytesIO(base64.urlsafe_b64decode(image))).convert("RGB")
         patch_image = self.patch_resize_transform(image) if type != 'visual_grounding' else None
