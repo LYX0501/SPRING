@@ -32,6 +32,9 @@ we propose a [Situated Conversation Agent Pre-trained with Multimodal Questions 
 pip install -r requirements.txt
 ```
 
+## 👐 Data Preparation
+
+
 ## 📝 **License**
 
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
