@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ```
 
 ## 👐 Data Preparation
-#### Download SIMMC 2.0 Dataset
+### Download SIMMC 2.0 Dataset
 Download the [SIMMC 2 dataset](https://github.com/facebookresearch/simmc2/tree/main/dstc10/data) via git-lfs and rearrange them in the **simmcdata** file as following format.
 ```
 |-- simmc2_scene_images_dstc10_public_part1    # Images (unzip simmc2_scene_images_dstc10_public_part1.zip)
@@ -77,6 +77,12 @@ The final directory structure of the whole project is
 |	| -- fashion_prefab_metadata_all.json 
 |   `-- ...
 ```
+### Construct Incremental Layout Graph
+Move into the **dataset** directory under SPRING and execute generate_ILG.py by 
+```
+python generate_ILG.py
+```
+Then ILGs.pkl will be generated in the dataset directory, which is a dictionary containing all ILGs for SIMMC2. The dictionary key is the name of scene annotation file while value is corresponding ILG stored by ILG Class.
 
 ## 📝 **License**
 
