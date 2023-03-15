@@ -17,6 +17,7 @@ we propose a [Situated Conversation Agent Pre-trained with Multimodal Questions 
 ![image2](./imgs/Spring.png)
 
 ## 🔥 News
+- 2023.3.14: We release pretrained checkpoint of SPRING.
 - 2023.1.5: Our paper is announced as AAAI 2023 Oral.
 - 2022.11.18: Our paper is accepted by AAAI 2023 Main Track. 
 
