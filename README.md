@@ -9,7 +9,7 @@
     <br />
 </p>
 
-## 🏴 **Overview**
+## 🏴 Overview
 we propose a [Situated Conversation Agent Pre-trained with Multimodal Questions from Incremental Layout Graph](https://arxiv.org/abs/2301.01949) (SPRING) with abilities of reasoning multi-hops spatial relationships and connecting them with visual attributes in crowded situated scenarios. Specifically, we design two types of Multimodal Question Answering (MQA) tasks to pretrain the agent. All QA pairs utilized during pretraining are generated from novel Increment Layout Graphs (ILG). QA pair difficulty labels automatically annotated by ILG are used to promote MQA-based Curriculum Learning. Experimental results verify the SPRING’s effectiveness, showing that it significantly outperforms state-of-the-art approaches on both SIMMC 1.0 and SIMMC 2.0 datasets.
 
 ![image1](./imgs/ILG.png)
@@ -78,33 +78,38 @@ The final directory structure of the whole project is
 |   `-- ...
 ```
 ### Construct Incremental Layout Graphs
-Move into the **SPRING/dataset** directory and execute generate_ILG.py
+Move into the **SPRING/dataset** directory and execute **generate_ILG.py** by
 ```
 python generate_ILG.py
 ```
 Then ILGs.pkl will be generated in the **SPRING/dataset** directory, which is a dictionary containing all ILGs for SIMMC2. The dictionary key is the name of scene annotation file while value is corresponding ILG stored by ILG Class.
 
 ### Generate Multimodal Question Answering Pairs
-Continually, also in the **SPRING/dataset** directory, execute generate_VisSpaQA.py by 
+Continually, also in the **SPRING/dataset** directory, execute **generate_VisSpaQA.py** by 
 ```
 python generate_VisSpaQA.py
 ```
 Above script reads dialogue data (responses to be evaluated are skipped) and generates visual QA pais and spatial QA pairs by transversing ILG.  The generated QA pairs are stored in **SPRING/dataset/simmc2_QA/simmc2_VisSpaQA.tsv** file. Each row of tsv file contains (QA type, scene image, answer, question, bbox, difficulty label, task type, dataset name).
 
 ### Prepare SIMMC 2.0 Dialog Data
-In this step, we prepare simmc2 tsv files for training by executing generate_simmc2.py in the **SPRING/dataset** directory. 
+In this step, we prepare simmc2 tsv files for training by executing **generate_simmc2.py** in the **SPRING/dataset** directory. 
 ```
 python generate_simmc2.py
 ```
 We can get **simmc2_train.tsv**, **simmc2_dev.tsv** and **simmc2_devtest.tsv** after completing execution，which are the input files of SPRING. Each row of these tsv files include (ID, scene image, system response, dialog history , None, None, task type, dataset name).
 
-## 📝 **License**
+##  Fine-tuning
+Move into **SPRING/run_scripts/simmc2** directory and execute **finetune_SPRING.sh**. You need to specify the location of pretrained model parameters in the bash script.
+```
+bash finetune_SPRING.sh
+```
+The finetuned model parameters and logs will be automatically saved under **SPRING/run_scripts/simmc2/finetune/finetune_checkpoints** directory every 2 epochs.
 
+## 📝 License
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
 
-## ✒ **Citation** 
+## ✒ Citation
 Please cite our paper if you find it helpful :)
-
 ```
 @article{long2023spring,
   author    = {Yuxing Long and
