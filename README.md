@@ -108,6 +108,12 @@ bash finetune_SPRING.sh test 0 1
 ```
 The finetuned model parameters and logs will be automatically saved under **SPRING/run_scripts/simmc2/finetune/finetune_checkpoints** directory.
 
+## 📐 Evaluation
+In the **SPRING/run_scripts/simmc2** directory, you can evaluate finetued SPRING model's performance on SIMMC Response Generation task by excuting **evaluate_one.sh**.
+```
+bash evaluate_one.sh test 0 1
+```
+
 ## 📝 License
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
 
