@@ -77,12 +77,19 @@ The final directory structure of the whole project is
 |	| -- fashion_prefab_metadata_all.json 
 |   `-- ...
 ```
-### Construct Incremental Layout Graph
-Move into the **SPRING/dataset** directory and execute generate_ILG.py by 
+### Construct Incremental Layout Graphs
+Move into the **SPRING/dataset** directory and execute generate_ILG.py
 ```
 python generate_ILG.py
 ```
-Then ILGs.pkl will be generated in the dataset directory, which is a dictionary containing all ILGs for SIMMC2. The dictionary key is the name of scene annotation file while value is corresponding ILG stored by ILG Class.
+Then ILGs.pkl will be generated in the **SPRING/dataset** directory, which is a dictionary containing all ILGs for SIMMC2. The dictionary key is the name of scene annotation file while value is corresponding ILG stored by ILG Class.
+
+### Generate Multimodal Question Answering Pairs
+Continually, also in the **SPRING/dataset** directory, execute generate_VisSpaQA.py by 
+```
+python generate_VisSpaQA.py
+```
+Above script reads dialogue data (responses to be evaluated are skipped) and generates visual QA pais and spatial QA pairs by transversing ILG.  The generated QA pairs are stored in **SPRING/dataset/simmc2_QA/simmc2_VisSpaQA.tsv** file. Each row of tsv file contains (QA type, scene image, answer, question, bbox, difficulty label, task type, dataset name).
 
 ## 📝 **License**
 
