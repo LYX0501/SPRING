@@ -1,16 +1,16 @@
 export MASTER_PORT=1061
 
-data_dir=/root/data/xican
+data_dir=../../dataset
 
 log_dir=${data_dir}/finetune/finetune_logs
 save_dir=${data_dir}/finetune/finetune_checkpoints
 mkdir -p $log_dir $save_dir
 
-bpe_dir=/root/code/SPRING/utils/BPE
-user_dir=/root/code/SPRING/ofa_module
+bpe_dir=../../utils/BPE
+user_dir=../../ofa_module
 
 data=${data_dir}/simmc2/simmc2_novisual_train.tsv,${data_dir}/simmc2/simmc2_novisual_dev.tsv
-restore_file=/root/data/xican/pretrain/$1/checkpoint4.pt
+restore_file=./checkpoint.pt
 selected_cols=0,1,2,3
 
 task=simmc2
@@ -45,7 +45,7 @@ for warmup_ratio in {0.06,}; do
     save_path=${save_dir}/$1
     mkdir -p $save_path
 
-    CUDA_VISIBLE_DEVICES=$2 python3 -m torch.distributed.launch --nproc_per_node=$3 --master_port=${MASTER_PORT} /root/code/SPRING/train.py \
+    CUDA_VISIBLE_DEVICES=$2 python3 -m torch.distributed.launch --nproc_per_node=$3 --master_port=${MASTER_PORT} ../../train.py \
         $data \
         --selected-cols=${selected_cols} \
         --bpe-dir=${bpe_dir} \

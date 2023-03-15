@@ -485,7 +485,7 @@ def validate(
         torch.distributed.barrier()
         print_validate_bleu()
         torch.distributed.barrier()
-        os.remove(f'/root/code/SPRING/run_scripts/simmc2/bleu_score{torch.distributed.get_rank()}.txt')
+        os.remove(f'./run_scripts/simmc2/bleu_score{torch.distributed.get_rank()}.txt')
         
         progress.print(stats, tag=subset, step=trainer.get_num_updates())
 
@@ -496,7 +496,7 @@ def print_validate_bleu():
     ngpu = torch.distributed.get_world_size()
     bleu_list = []
     for i in range(ngpu):
-        bleu_file = open(f'/root/code/SPRING/run_scripts/simmc2/bleu_score{i}.txt', 'r')
+        bleu_file = open(f'./run_scripts/simmc2/bleu_score{i}.txt', 'r')
         for bleu_score in bleu_file:
             bleu_list.append(float(bleu_score[:-1]))
     final_bleu = np.mean(bleu_list)

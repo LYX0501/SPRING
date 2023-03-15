@@ -157,8 +157,8 @@ class Simmc2Task(OFATask):
             detok_hypo_str = self.decode_fn(hypos[i][0]["tokens"], self.tgt_dict, self.bpe, generator)
             hyps.append(detok_hypo_str)
 
-        bleu_file = open(f'/root/code/SPRING/run_scripts/simmc2/bleu_score{torch.distributed.get_rank()}.txt', 'a')
-        dialogs = json.load(open('/root/data/xican/simmcdata/simmc2_dials_dstc10_dev.json', 'r'))
+        bleu_file = open(f'../../run_scripts/simmc2/bleu_score{torch.distributed.get_rank()}.txt', 'a')
+        dialogs = json.load(open('../../simmcdata/simmc2_dials_dstc10_dev.json', 'r'))
         chencherry = nltk.translate.bleu_score.SmoothingFunction()
         ids = [int(_id) for _id in sample['id']]
         for response, _id in zip(hyps, ids):   
