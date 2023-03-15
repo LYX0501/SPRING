@@ -33,7 +33,49 @@ pip install -r requirements.txt
 ```
 
 ## 👐 Data Preparation
+Download the SIMMC 2 dataset from Github facebook/simmc2/data resperitory via git-lfs and rearrange them in the **simmcdata** file as following format.
+```
+|-- simmc2_scene_images_dstc10_public_part1    # Images (unzip simmc2_scene_images_dstc10_public_part1.zip)
+|   |-- cloth_store_1416238_woman_1_1.png
+|   |-- cloth_store_1416238_woman_1_2.png
+|   `-- ...
+|-- simmc2_scene_images_dstc10_public_part2    # Images (unzip simmc2_scene_images_dstc10_public_part2.zip)
+|   |-- cloth_store_1_1_1.png
+|   |-- cloth_store_1_1_2.png
 
+|-- public                                     # Scene (unzip simmc2_scene_jsons_dstc10_public.zip)
+|   |-- cloth_store_1_1_1_bbox.json
+|   |-- cloth_store_1_1_1_scene.json
+|   `-- ...
+|-- item2id.json                               # converted asset ID (provided by us)
+|-- fashion_prefab_metadata_all.json           # fashion metadata
+|-- furniture_prefab_metadata_all.json         # furniture metadata
+|-- simmc2_dials_dstc10_train.json             # dialogue train split 
+|-- simmc2_dials_dstc10_dev.json               # dialogue dev slit
+|-- simmc2_dials_dstc10_devtest.json           # dialogue devtest split
+```
+**NOTE**: Some of the scene images are corrupted and therefore ignored. We do not make use of images in our model.
+```
+./data/images/cloth_store_1416238_woman_4_8.png
+./data/images/cloth_store_1416238_woman_19_0.png
+./data/images/cloth_store_1416238_woman_20_6.png
+```
+The final directory structure of the whole project is
+```
+|Project
+|-- SPRING
+|	| -- models
+|	| -- tasks
+|	| -- run_scripts
+|	| -- dataset
+|   `-- ...
+|-- simmcdata
+|	| -- simmc2_scene_images_dstc10_public_part
+|	| -- simmc2_scene_images_dstc10_public_par2
+|	| -- item2id.json
+|	| -- fashion_prefab_metadata_all.json 
+|   `-- ...
+```
 
 ## 📝 **License**
 
