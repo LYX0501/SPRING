@@ -98,10 +98,10 @@ python generate_simmc2.py
 ```
 We can get **simmc2_train.tsv**, **simmc2_dev.tsv** and **simmc2_devtest.tsv** after completing execution，which are the input files of SPRING. Each row of these tsv files include (ID, scene image, system response, dialog history , None, None, task type, dataset name).
 
-## Pre-training
+## 🛫 Pre-training
 We will open pretrain bash in the future. At present, you can download pretrained SPRING model at [here](https://drive.google.com/file/d/1lAcN7fn8-VXuKaL2n216x4MVt1rigXIK/view?usp=share_link) and put **checkpoint.pt** under **SPRING/run_scripts/simmc2** directory.
 
-##  Fine-tuning
+## 🚀 Fine-tuning
 Move into **SPRING/run_scripts/simmc2** directory and execute **finetune_SPRING.sh**. You need to specify the location of pretrained model parameters in the bash script.
 ```
 bash finetune_SPRING.sh test 0 1
