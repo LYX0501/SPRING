@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ```
 
 ## 👐 Data Preparation
-Download the SIMMC 2 dataset from Github facebook/simmc2/data resperitory via git-lfs and rearrange them in the **simmcdata** file as following format.
+Download the [SIMMC 2 dataset](https://github.com/facebookresearch/simmc2/tree/main/dstc10/data) via git-lfs and rearrange them in the **simmcdata** file as following format.
 ```
 |-- simmc2_scene_images_dstc10_public_part1    # Images (unzip simmc2_scene_images_dstc10_public_part1.zip)
 |   |-- cloth_store_1416238_woman_1_1.png
