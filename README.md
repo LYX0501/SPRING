@@ -91,6 +91,13 @@ python generate_VisSpaQA.py
 ```
 Above script reads dialogue data (responses to be evaluated are skipped) and generates visual QA pais and spatial QA pairs by transversing ILG.  The generated QA pairs are stored in **SPRING/dataset/simmc2_QA/simmc2_VisSpaQA.tsv** file. Each row of tsv file contains (QA type, scene image, answer, question, bbox, difficulty label, task type, dataset name).
 
+### Prepare SIMMC 2.0 Dialog Data
+In this step, we prepare simmc2 tsv files for training by executing generate_simmc2.py in the **SPRING/dataset** directory. 
+```
+python generate_simmc2.py
+```
+We can get **simmc2_train.tsv**, **simmc2_dev.tsv** and **simmc2_devtest.tsv** after completing execution，which are the input files of SPRING. Each row of these tsv files include (ID, scene image, system response, dialog history , None, None, task type, dataset name).
+
 ## 📝 **License**
 
 Our repository is released under MIT License, see [LICENSE](LICENSE) for details.
