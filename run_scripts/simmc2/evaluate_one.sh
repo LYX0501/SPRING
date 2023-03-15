@@ -1,17 +1,17 @@
 export MASTER_PORT=1091
 
-bpe_dir=/root/code/SPRING/utils/BPE
-user_dir=/root/code/SPRING/ofa_module
+bpe_dir=../../utils/BPE
+user_dir=../../ofa_module
 
-para_result=/root/data/xican/finetune/finetune_checkpoints/$1
+para_result=./finetune/finetune_checkpoints/$1
 para=${para_result}/checkpoint_best.pt
 
-data=/root/data/xican/simmc2/simmc2_novisual_devtest.tsv
+data=../../dataset/simmc2/simmc2_novisual_devtest.tsv
 selected_cols=0,1,2,3
 split='test'
 
 generation_pred_json=${para_result}/test_predict.json
-split_path=/root/data/xican/simmcdata/simmc2_dials_dstc10_devtest.json
+split_path=../../simmcdata/simmc2_dials_dstc10_devtest.json
 save_path=${para_result}/subtask-4-generation.json
 
 
