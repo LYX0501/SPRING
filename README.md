@@ -78,7 +78,7 @@ The final directory structure of the whole project is
 |   `-- ...
 ```
 ### Construct Incremental Layout Graph
-Move into the **dataset** directory under SPRING and execute generate_ILG.py by 
+Move into the **SPRING/dataset** directory and execute generate_ILG.py by 
 ```
 python generate_ILG.py
 ```
