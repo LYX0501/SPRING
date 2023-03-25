@@ -87,7 +87,7 @@ Then ILGs.pkl will be generated in the **SPRING/dataset** directory, which is a 
 ### Generate Multimodal Question Answering Pairs
 Continually, also in the **SPRING/dataset** directory, execute **generate_VisSpaQA.py** by 
 ```
-python generate_VisSpaQA.py
+python generate_MQA_fromILG.py
 ```
 Above script reads dialogue data (responses to be evaluated are skipped) and generates visual QA pais and spatial QA pairs by transversing ILG.  The generated QA pairs are stored in **SPRING/dataset/simmc2_QA/simmc2_VisSpaQA.tsv** file. Each row of tsv file contains (QA type, scene image, answer, question, bbox, difficulty label, task type, dataset name).
 
@@ -104,7 +104,7 @@ We will open pretrain bash in the future. At present, you can download pretraine
 ## 🚀 Fine-tuning
 Move into **SPRING/run_scripts/simmc2** directory and execute **finetune_SPRING.sh**. You need to specify the location of pretrained model parameters in the bash script.
 ```
-bash finetune_SPRING.sh test 0 1
+bash train_simmc2.sh test 0 1
 ```
 The finetuned model parameters and logs will be automatically saved under **SPRING/run_scripts/simmc2/finetune/finetune_checkpoints** directory.
 
